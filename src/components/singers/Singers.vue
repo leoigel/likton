@@ -1,5 +1,5 @@
 <template>
-    <div class="singers_container">
+    <div class="singers_container centered">
         <Search :singers="singers" :dataSingers="dataSingers" @newSingers="singers = $event"/>
         <div class="singers-content">  
         <Singer v-for="singer in singers" :key="singer.id" :singer="singer"/>
@@ -27,11 +27,11 @@ export default {
 
 <style>
 .singers_container {
-width: 980px;
+max-width:1200px;
+width:980px;
 margin: 0 auto;
 }
 .singers-content {
-    /* min-width:350px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -45,12 +45,12 @@ margin: 0 auto;
 }
 @media (max-width: 767px){
   .singers_container {
-      max-width:500px;
+      width:100%;
   }  
 }
 @media (max-width: 480px){
   .singers_container {
-      min-width:350px;
+      width:100%;
   }  
 }
 </style>

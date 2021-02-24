@@ -35,8 +35,8 @@ mounted() {
 .container_search {
     height: 100%;
     padding: 0;
-    margin: 0 auto;
     max-width: 980px;
+    margin:0 10px;
 }
 .container_search input{
     background-color: transparent;
@@ -51,5 +51,10 @@ mounted() {
     box-shadow: none;
     box-sizing: content-box;
     text-align:right;
+}
+@media(max-width:480px) {
+  .container_search {
+   margin:0 10px;
+  }
 }
 </style>

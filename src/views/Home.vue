@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Header />
     <Singers />
     <Footer />
@@ -18,4 +18,3 @@ components: {Singers}
 
 
 </style>
-// MainText

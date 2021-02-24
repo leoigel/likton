@@ -104,12 +104,8 @@ li {
    height:70px;
    background-image:url('../../assets/images/linktone_logo.png');
    background-size: contain;
-   transition: 1s
 }
-.logo_pic:hover {
-    color: #ff1661;
-    transform: translateY(-1px);
-}
+
  .container {
      position:relative;
      overflow: hidden;
@@ -291,7 +287,10 @@ background-clip: text;
 }
 @media(max-width:480px) {
     .logo_pic {
-        left:16%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
     }
     .header_aside {
         width:100%;

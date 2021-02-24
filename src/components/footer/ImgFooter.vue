@@ -14,7 +14,7 @@ props:['categories']
 <style>
 .container_img_footer {
  display:flex;
- justify-content:space-between ;
+ justify-content:space-around ;
  width:100%;
  }
 .box {

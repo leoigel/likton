@@ -33,5 +33,10 @@ h1 {
   -webkit-text-fill-color: transparent;
 
 }
+@media(max-width:480px) {
+  h1,.container_text{
+    font-size: 30px;
+  }
+}
 </style>
 

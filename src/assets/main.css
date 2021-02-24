@@ -41,3 +41,6 @@
   padding: 0px;
   font-family: 'almoni-dl';
 }
+.centered {
+  max-width: 100%;
+}
