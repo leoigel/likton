@@ -11,7 +11,7 @@
 
 import singers from '@/assets/data.js';
 import Singer from './Singer';
-import Search from './Search';
+import Search from '../search/Search';
 export default {
     components: {Singer,Search},
     data() {

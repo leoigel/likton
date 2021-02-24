@@ -41,7 +41,7 @@
 import singers from '@/assets/data.js';
 import Hamburger from './Hamburger';
 import Login from './Login';
-import MainText from './MainText';
+import MainText from '../texts/MainText';
 export default {
     components: {Login,Hamburger,MainText},
      data() {
@@ -102,8 +102,13 @@ li {
 .logo_pic {
    width:70px;
    height:70px;
-   background-image:url('../assets/images/linktone_logo.png');
+   background-image:url('../../assets/images/linktone_logo.png');
    background-size: contain;
+   transition: 1s
+}
+.logo_pic:hover {
+    color: #ff1661;
+    transform: translateY(-1px);
 }
  .container {
      position:relative;

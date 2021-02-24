@@ -1,16 +1,15 @@
 <template>
   <div>
-    <Menu />
+    <Header />
     <Singers />
     <Footer />
   </div>
 </template>
 
 <script>
-import Menu from '@/components/Menu'
-import Singers from '@/components/Singers';
+import Singers from '@/components/singers/Singers';
 export default {
-components: {Menu,Singers}
+components: {Singers}
 }
 </script>
 

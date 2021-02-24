@@ -28,7 +28,7 @@ h1 {
   background-clip: text;
    font-family: Arial, Helvetica, sans-serif;
    font-size: 38px;
-   background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+   background: linear-gradient(109deg, #ff1661 11%, #00b7ff 122%);;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
