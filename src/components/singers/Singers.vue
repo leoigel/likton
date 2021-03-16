@@ -1,27 +1,53 @@
 <template>
     <div class="singers_container centered">
         <Search :singers="singers" :dataSingers="dataSingers" @newSingers="singers = $event"/>
-        <div class="singers-content">  
-        <Singer v-for="singer in singers" :key="singer.id" :singer="singer"/>
-    </div>
+      
+        <div v-if="loaded"  class="singers-content">  
+            <Singer  v-for="singer in singers" :key="singer.id"  :singer="singer"/>
+        </div>
+        <div><Loading /></div>
+        <Observer  @intersect="intersected"/>
+      
+
+        
  </div>
 </template>
 
-<script>
+<script> 
 
-import singers from '@/assets/data.js';
 import Singer from './Singer';
 import Search from '../search/Search';
+import Observer from '../observer/Observer';
+import Loading from '../loading/Loading';
 export default {
-    components: {Singer,Search},
+    name:'singers',
+    components: {Singer,Search,Observer,Loading},
     data() {
         return {
-            singers,
-            dataSingers:singers
+            loaded:null,
+            singers:null,
+            dataSingers:null,
+            page:1,
         }
     },
-  
-    
+    methods: {
+         intersected() {
+               this.page = this.page + 1;
+               this.net_api({action:"results",method:'post',data: { page: this.page}}, (data) => {
+               this.$store.dispatch('addSingers',data);
+               
+      })
+             
+        }
+    },
+    mounted() {
+        this.net_api({action:"results",method:'post',data:{ page: this.page}}, (data) => {
+        this.$store.dispatch('dispatchSingers',data);
+        this.loaded=this.$store.state.loaded;
+        this.singers=this.$store.state.singers;
+        this.dataSingers=this.$store.state.singers;
+      })
+    }
 }
 </script>
 

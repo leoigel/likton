@@ -1,12 +1,16 @@
 <template>
-  <Home />
+  <div>
+  <Header />
+	<router-view />
+   <Footer />
+  </div>
 </template>
 
 <script>
-import Home from './views/Home'
+
 export default {
-  components: {Home},
   name: 'App',
+
 
 }
 </script>

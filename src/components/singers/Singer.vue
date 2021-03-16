@@ -1,26 +1,29 @@
 <template>
     <div class="container_singer">
-        <div class="pic_singer" :style="{ backgroundImage: 'url(' + singer.img + ')' }"></div>
-        <h3>{{singer.name}}</h3>
+        <router-link tag="div" :to="singer.id" class="pic_singer" :style="{ backgroundImage: 'url(' + singer.pic_tumb + ')' }"></router-link>
+        <h4>{{singer.name}}</h4>
     </div>
 </template>
 
 <script>
 export default {
-props:['singer']
+name:'Singer',
+props:['singer'],
+    
 }
 </script>
 <style>
 .container_singer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     flex-wrap:wrap;
-}
-.container_singer {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
+
 }
+
 .pic_singer {
   width: 200px;
   height: 200px;
@@ -31,12 +34,17 @@ props:['singer']
    border-radius: 32.5px;
   box-shadow: 0 12px 34px -20px rgba(0, 0, 0, 0.5);
   background-color: #d8d8d8;
-
+  cursor:pointer;
 }
 @media(max-width:480px) {
+    .container_singer {
+         font-size: 15px;
+    }
     .pic_singer {
         width:150px;
         height: 150px;
+         
+
     }
 }
 </style>

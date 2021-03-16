@@ -1,10 +1,10 @@
 <template>
     <div class="footer">
         <div class="container_link_categorie">
-            <li v-for="link_categorie in links_categories" :key="link_categorie.id" @click="changeCategories=categories = link_categorie.categorie" >{{link_categorie.categorie}}</li>
+            <li v-for="(link_categorie,index) in links_categories" :key="link_categorie.id" @click="changeCategories(link_categorie,index,links_categories)" :class="[{active: index === isActive} ]" >{{link_categorie.categorie}}</li>
         </div>
         <div class="boxes centered">
-          <carousel :class="owl" :autoplay="true"  :loop="true" :nav="false" :dots="false"  :items=1 :responsive={}>
+          <carousel :class="owl" :autoplay="true"  :loop="true" :nav="false" :dots="false"  :items=1 >
           <ImgFooter :categories="categories">
             <slot></slot>
           </ImgFooter>
@@ -31,6 +31,7 @@ export default {
       return {
           owl:'owl-carousel owl-theme owl-loaded',
           categories:'רדיו',
+          isActive:0,
           links_categories: [
             {id:1,categorie:'radio'},
             {id:2,categorie:'tv'},
@@ -59,11 +60,17 @@ export default {
             information: [
               {id: 1,value:'campany', name:'Copyrights © linktone L.T.D'},
               {id: 2,value:'liner', name:'|'},
-              {id: 3,value:'contect', name:'03-5618778'},
+              {id: 3,value:'contact', name:'03-5618778'},
               {id: 4,value:'liner', name:'|'},
               {id: 5,value:'adder', name:'61130 הארד 3, רמת החי"ל, תל אביב'}
             ]
         }
+    },
+    methods: {
+      changeCategories(link_categorie,index) {
+       this.categories = link_categorie.categorie;
+       this.isActive = index;
+       }
     }
        
 }
@@ -90,6 +97,7 @@ export default {
 }
 .container_link_categorie li {
   list-style-type: none; 
+  font-size: 18px;
   margin-left:10px;
   color:gray;
 }
@@ -98,8 +106,10 @@ export default {
     margin: 25px;
 }
 .social_networks  {
-    padding-left: 25px;
     text-align:center;
+    display:flex;
+    justify-content: center;
+    align-items:center;
 }
 .social_link {
      margin-left:20px;
@@ -115,7 +125,7 @@ export default {
     display: inline-block;
     padding-left: 25px;
 }
-#footer .footer_links a:hover{
+.footer .footer_links a:hover{
     text-decoration: none;
     color: #039be5;
     text-decoration: none;
@@ -135,4 +145,6 @@ export default {
    padding-left: 8px;
  }
 }
+.active {font-weight:600;color:black!important;}
+
 </style>

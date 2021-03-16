@@ -7,6 +7,7 @@
 <script>
 
 export default {
+name:'ImgFooter',
 props:['categories']
 }
 </script>

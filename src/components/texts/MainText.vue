@@ -8,10 +8,12 @@
 <script>
 
 export default {
+  name:'Maintext'
 }
 </script>
 
 <style scoped>
+
 
 .container_text {
     text-align: right;

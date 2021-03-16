@@ -6,10 +6,11 @@
 
 <script>
 export default {
+    name:'Search',
     props:['singers','dataSingers'],
     data() {
         return {
-            isNotEmpty:false
+            isNotEmpty:false,
         }
     },
    methods: {
@@ -19,7 +20,7 @@ export default {
         if(e.target.value === '' || newData.length === 0) {
             newData = this.dataSingers;
         }
-          this.$emit('newSingers',newData)
+        this.$emit('newSingers',newData)
        },
    } ,
 mounted() {
